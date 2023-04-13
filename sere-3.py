@@ -145,12 +145,15 @@ while True:
     else:
         print('Ha ingresado mal, intente nuevamente.')
 
-    opcion_continuar = input("Desea seguir apostando?\n1. Si\n0. No\n")
-    # Verificar que el usuario haya ingresado una opción válida (1 o 0)
-
-    while opcion_continuar not in ["0", "1"]:
-        print("Ha ingresado mal, intente nuevamente.")
+    if dinero <= 0:
+        print('No tiene mas plata para apostar')
+        opcion_continuar = 0
+    else:
         opcion_continuar = input("Desea seguir apostando?\n1. Si\n0. No\n")
+    # Verificar que el usuario haya ingresado una opción válida (1 o 0)
+        while opcion_continuar not in ["0", "1"]:
+            print("Ha ingresado mal, intente nuevamente.")
+            opcion_continuar = input("Desea seguir apostando?\n1. Si\n0. No\n")
 
     if opcion_continuar == "0":
         while len(betsArray) > 0:
@@ -236,7 +239,7 @@ while True:
                           ", actualmente tiene ", dinero)
                 else:
                     print("Sus ganancias son 0, actualmente tiene ", dinero)
-        print('Total is', dinero)
+        print('Usted se retira de casino con', dinero, ".")
         break
     elif opcion_continuar == "1":
         nextRound = True
