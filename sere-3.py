@@ -1,10 +1,10 @@
 import random
 dinero = 1000
-nextRound = False
-betsArray = []
+siguente_ronda = False
+coleccion_apuestas = []
 
 while True:
-    if nextRound:
+    if siguente_ronda:
         print('######## Nueva ronda de apuestas ########')
         print("Usted tiene " + str(dinero) + " para usar.")
 
@@ -113,13 +113,13 @@ while True:
     print("Ha apostado " + str(apuesta) +
           ". Le quedan " + str(dinero) + " para usar.")
     if opcion == 1:
-        betsArray.append([opcion, apuesta, par_impar])
+        coleccion_apuestas.append([opcion, apuesta, par_impar])
     elif opcion == 2:
-        betsArray.append([opcion, apuesta, columna])
+        coleccion_apuestas.append([opcion, apuesta, columna])
     elif opcion == 3:
-        betsArray.append([opcion, apuesta, numero_elegido])
+        coleccion_apuestas.append([opcion, apuesta, numero_elegido])
     elif opcion == 4:
-        betsArray.append([opcion, apuesta, color])
+        coleccion_apuestas.append([opcion, apuesta, color])
     else:
         print('Ha ingresado mal, intente nuevamente.')
 
@@ -136,14 +136,14 @@ while True:
         numero_ganador = random.randint(0, 36)
         print("Ha salido", numero_ganador)
 
-        while len(betsArray) > 0:
-            currentBet = betsArray.pop()
-            opcion = currentBet[0]
-            apuesta = currentBet[1]
+        while len(coleccion_apuestas) > 0:
+            apuesta_actual = coleccion_apuestas.pop()
+            opcion = apuesta_actual[0]
+            apuesta = apuesta_actual[1]
 
             if opcion == 1:
                 ganancia = 0
-                par_impar = currentBet[2]
+                par_impar = apuesta_actual[2]
 
                 if par_impar == 1:
                     par_impar_desc = 'par'
@@ -159,7 +159,7 @@ while True:
 
             if opcion == 2:
                 ganancia = 0
-                columna = currentBet[2]
+                columna = apuesta_actual[2]
 
                 if columna == 1:
 
@@ -183,7 +183,7 @@ while True:
 
             if opcion == 3:
                 ganancia = 0
-                numero_elegido = currentBet[2]
+                numero_elegido = apuesta_actual[2]
                 if numero_ganador == numero_elegido:
                     ganancia = apuesta * 36
                     dinero += ganancia
@@ -193,7 +193,7 @@ while True:
 
             if opcion == 4:
                 ganancia = 0
-                color = currentBet[2]
+                color = apuesta_actual[2]
                 if color == 1:
                     color_desc = 'rojo'
                 else:
@@ -212,17 +212,17 @@ while True:
             print('Desea seguir jugando?')
             print('1. Si')
             print('2. No')
-            play_continue = input('')
-            while play_continue != '1' and play_continue != '2':
+            continuar_juego = input('')
+            while continuar_juego != '1' and continuar_juego != '2':
                 print("Ha ingresado mal, intente nuevamente.")
-                play_continue = input('')
-            if play_continue == '1':
-                nextRound = True
+                continuar_juego = input('')
+            if continuar_juego == '1':
+                siguente_ronda = True
                 continue
-            elif play_continue == '2':
+            elif continuar_juego == '2':
                 print('Usted se retira de casino con ' + dinero + ".")
                 break
 
     elif opcion_continuar == "1":
-        nextRound = True
+        siguente_ronda = True
         continue
