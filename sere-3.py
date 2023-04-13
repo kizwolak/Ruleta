@@ -6,11 +6,11 @@ betsArray = []
 while True:
     if nextRound:
         print('######## Nueva ronda de apuestas ########')
-        print("Usted tiene" + str(dinero) + "para usar.")
+        print("Usted tiene " + str(dinero) + " para usar.")
 
     else:
         print("##################  Bienvenido a la Ruleta  #####################")
-        print("Usted tiene" + str(dinero) + "para usar.")
+        print("Usted tiene " + str(dinero) + " para usar.")
 
     opcion = input(
         "A qué desea apostar?\n1. Par o Impar\n2. Columnas\n3. Número\n4. Color\n"
@@ -157,11 +157,12 @@ while True:
             opcion_continuar = input("Desea seguir apostando?\n1. Si\n0. No\n")
 
     if opcion_continuar == "0":
+        numero_ganador = random.randint(0, 36)
+
         while len(betsArray) > 0:
             currentBet = betsArray.pop()
             opcion = currentBet[0]
             apuesta = currentBet[1]
-            numero_ganador = random.randint(0, 36)
 
             if opcion == 1:
                 par_impar = currentBet[2]
@@ -244,8 +245,20 @@ while True:
             print('Usted se retira de casino con ' + str(dinero) + ".")
             break
         else:
-            nextRound = True
-            continue
+            print('Desea seguir jugando?')
+            print('1. Si')
+            print('2. No')
+            play_continue = input('')
+            while play_continue != '1' and play_continue != '2':
+                print("Ha ingresado mal, intente nuevamente.")
+                play_continue = input('')
+            if play_continue == '1':
+                nextRound = True
+                continue
+            elif play_continue == '2':
+                print('Usted se retira de casino con ' + str(dinero) + ".")
+                break
+
     elif opcion_continuar == "1":
         nextRound = True
         continue
