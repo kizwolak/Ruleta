@@ -167,8 +167,8 @@ while True:
                 print("Ha salido", numero_ganador)
 
                 if numero_ganador % 2 == 0 and par_impar == 1 or numero_ganador % 2 == 1 and par_impar == 2:
-                    ganancias = apuesta * 2
-                    dinero += ganancias
+                    ganancia = apuesta * 2
+                    dinero += ganancia
                     print("Sus ganancias son " + str(ganancia) +
                           ", actualmente tiene " + str(dinero))
                 else:
@@ -184,8 +184,8 @@ while True:
                 if columna == 1:
 
                     if numero_ganador in [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34]:
-                        ganancias = apuesta * 3
-                        dinero += ganancias
+                        ganancia = apuesta * 3
+                        dinero += ganancia
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
@@ -194,8 +194,8 @@ while True:
                 elif columna == 2:
 
                     if numero_ganador in [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]:
-                        ganancias = apuesta * 3
-                        dinero += ganancias
+                        ganancia = apuesta * 3
+                        dinero += ganancia
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
@@ -203,8 +203,8 @@ while True:
 
                 else:
                     if numero_ganador in [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]:
-                        ganancias = apuesta * 3
-                        dinero += ganancias
+                        ganancia = apuesta * 3
+                        dinero += ganancia
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
