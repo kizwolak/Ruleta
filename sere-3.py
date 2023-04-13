@@ -232,14 +232,14 @@ while True:
                 color = currentBet[2]
                 numero_ganador = random.randint(1, 36)
                 print("El número es", numero_ganador)
-                if (numero_ganador in numeros_rojos and color == "rojo") or (numero_ganador in numeros_negros and color == "negro"):
+                if (numero_ganador in numeros_rojos and color == 1) or (numero_ganador in numeros_negros and color == 2):
                     ganancia = apuesta * 2
                     dinero += ganancia
                     print("Sus ganancias son ", ganancia,
                           ", actualmente tiene ", dinero)
                 else:
-                    print("Sus ganancias son 0, actualmente tiene ", dinero)
-        print('Usted se retira de casino con', dinero, ".")
+                    print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+        print('Usted se retira de casino con ' + str(dinero) + ".")
         break
     elif opcion_continuar == "1":
         nextRound = True
