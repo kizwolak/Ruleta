@@ -158,6 +158,7 @@ while True:
 
     if opcion_continuar == "0":
         numero_ganador = random.randint(0, 36)
+        print("Ha salido", numero_ganador)
 
         while len(betsArray) > 0:
             currentBet = betsArray.pop()
@@ -166,7 +167,6 @@ while True:
 
             if opcion == 1:
                 par_impar = currentBet[2]
-                print("Ha salido", numero_ganador)
 
                 if numero_ganador % 2 == 0 and par_impar == 1 or numero_ganador % 2 == 1 and par_impar == 2:
                     ganancia = apuesta * 2
@@ -180,7 +180,6 @@ while True:
             # como se define columnas
             if opcion == 2:
                 columna = currentBet[2]
-                print("Ha salido", numero_ganador)
 
                 if columna == 1:
 
@@ -217,7 +216,6 @@ while True:
             # COMO SE DEFINE NUMERO
             if opcion == 3:
                 numero_elegido = currentBet[2]
-                print("Ha salido", numero_ganador)
                 if numero_ganador == numero_elegido:
                     ganancia = apuesta * 36
                     dinero += ganancia
@@ -231,7 +229,6 @@ while True:
 
             if opcion == 4:
                 color = currentBet[2]
-                print("El número es", numero_ganador)
                 if (numero_ganador in numeros_rojos and color == 1) or (numero_ganador in numeros_negros and color == 2):
                     ganancia = apuesta * 2
                     dinero += ganancia
