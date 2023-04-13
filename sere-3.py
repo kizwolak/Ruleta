@@ -142,18 +142,23 @@ while True:
             apuesta = currentBet[1]
 
             if opcion == 1:
+                ganancia = 0
                 par_impar = currentBet[2]
+
+                if par_impar == 1:
+                    par_impar_desc = 'par'
+                else:
+                    par_impar_desc = 'impar'
 
                 if numero_ganador % 2 == 0 and par_impar == 1 or numero_ganador % 2 == 1 and par_impar == 2:
                     ganancia = apuesta * 2
                     dinero += ganancia
-                    print("Sus ganancias son " + str(ganancia) +
-                          ", actualmente tiene " + str(dinero) + ".")
-                else:
-                    print("Sus ganancias son 0, actualmente tiene " +
-                          str(dinero) + ".")
+
+                print("Como usted apostó " + str(apuesta) + " al " +
+                      par_impar_desc + ", ganó " + str(ganancia))
 
             if opcion == 2:
+                ganancia = 0
                 columna = currentBet[2]
 
                 if columna == 1:
@@ -161,57 +166,47 @@ while True:
                     if numero_ganador in [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34]:
                         ganancia = apuesta * 3
                         dinero += ganancia
-                        print("Sus ganancias son " + str(ganancia) +
-                              ", actualmente tiene " + str(dinero))
-                    else:
-                        print("Sus ganancias son 0, actualmente tiene " +
-                              str(dinero) + ".")
 
                 elif columna == 2:
 
                     if numero_ganador in [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]:
                         ganancia = apuesta * 3
                         dinero += ganancia
-                        print("Sus ganancias son " + str(ganancia) +
-                              ", actualmente tiene " + str(dinero))
-                    else:
-                        print("Sus ganancias son 0, actualmente tiene " +
-                              str(dinero) + ".")
 
                 else:
                     if numero_ganador in [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]:
                         ganancia = apuesta * 3
                         dinero += ganancia
-                        print("Sus ganancias son " + str(ganancia) +
-                              ", actualmente tiene " + str(dinero))
-                    else:
-                        print("Sus ganancias son 0, actualmente tiene " +
-                              str(dinero) + '.')
+
+                print("Como usted apostó " + str(apuesta) +
+                      "al columna " + str(columna) + ", ganó" + str(ganancia))
 
             if opcion == 3:
+                ganancia = 0
                 numero_elegido = currentBet[2]
                 if numero_ganador == numero_elegido:
                     ganancia = apuesta * 36
                     dinero += ganancia
-                    print("Sus ganancias son " + str(ganancia) +
-                          ", actualmente tiene " + str(dinero))
-                else:
-                    print("Sus ganancias son 0, actualmente tiene " +
-                          str(dinero) + '.')
+
+                print("Como usted apostó " + str(apuesta) +
+                      " al numero " + str(numero_elegido) + ", ganó" + str(ganancia))
 
             if opcion == 4:
+                ganancia = 0
                 color = currentBet[2]
+                if color == 1:
+                    color_desc = 'rojo'
+                else:
+                    color_desc = 'negro'
                 if (numero_ganador in numeros_rojos and color == 1) or (numero_ganador in numeros_negros and color == 2):
                     ganancia = apuesta * 2
                     dinero += ganancia
-                    print("Sus ganancias son " + str(ganancia) +
-                          ", actualmente tiene " + str(dinero))
-                else:
-                    print("Sus ganancias son 0, actualmente tiene " +
-                          str(dinero) + '.')
+
+                print("Como usted apostó " + str(apuesta) +
+                      " al color " + color_desc + ", ganó" + str(ganancia))
         if dinero <= 0:
             print('Se ha quedado sin dinero.')
-            print('Usted se retira de casino con ' + str(dinero) + ".")
+            print('Usted se retira de casino con ' + dinero + ".")
             break
         else:
             print('Desea seguir jugando?')
@@ -225,7 +220,7 @@ while True:
                 nextRound = True
                 continue
             elif play_continue == '2':
-                print('Usted se retira de casino con ' + str(dinero) + ".")
+                print('Usted se retira de casino con ' + dinero + ".")
                 break
 
     elif opcion_continuar == "1":
