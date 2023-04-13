@@ -6,11 +6,11 @@ betsArray = []
 while True:
     if nextRound:
         print('######## Nueva ronda de apuestas ########')
-        print("Usted tiene ", dinero,  "para usar.")
+        print("Usted tiene" + str(dinero) + "para usar.")
 
     else:
         print("##################  Bienvenido a la Ruleta  #####################")
-        print("Usted tiene", dinero, "para usar.")
+        print("Usted tiene" + str(dinero) + "para usar.")
 
     opcion = input(
         "A qué desea apostar?\n1. Par o Impar\n2. Columnas\n3. Número\n4. Color\n"
