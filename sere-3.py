@@ -133,7 +133,7 @@ while True:
     # Actualizar la cantidad de dinero del usuario y mostrarla
     dinero -= apuesta
     print("Ha apostado " + str(apuesta) +
-          ". Le quedan" + str(dinero) + "para usar.")
+          ". Le quedan " + str(dinero) + " para usar.")
     # Preguntar al usuario si quiere seguir apostando
     if opcion == 1:
         betsArray.append([opcion, apuesta, par_impar])
@@ -147,8 +147,8 @@ while True:
         print('Ha ingresado mal, intente nuevamente.')
 
     if dinero <= 0:
-        print('No tiene mas plata para apostar')
-        opcion_continuar = 0
+        print('No tiene mas plata para apostar.')
+        opcion_continuar = "0"
     else:
         opcion_continuar = input("Desea seguir apostando?\n1. Si\n0. No\n")
     # Verificar que el usuario haya ingresado una opción válida (1 o 0)
@@ -171,9 +171,10 @@ while True:
                     ganancia = apuesta * 2
                     dinero += ganancia
                     print("Sus ganancias son " + str(ganancia) +
-                          ", actualmente tiene " + str(dinero))
+                          ", actualmente tiene " + str(dinero) + ".")
                 else:
-                    print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+                    print("Sus ganancias son 0, actualmente tiene " +
+                          str(dinero) + ".")
 
             # como se define columnas
             if opcion == 2:
@@ -188,7 +189,8 @@ while True:
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
-                        print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+                        print("Sus ganancias son 0, actualmente tiene " +
+                              str(dinero) + ".")
 
                 elif columna == 2:
 
@@ -198,7 +200,8 @@ while True:
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
-                        print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+                        print("Sus ganancias son 0, actualmente tiene " +
+                              str(dinero) + ".")
 
                 else:
                     if numero_ganador in [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]:
@@ -207,7 +210,8 @@ while True:
                         print("Sus ganancias son " + str(ganancia) +
                               ", actualmente tiene " + str(dinero))
                     else:
-                        print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+                        print("Sus ganancias son 0, actualmente tiene " +
+                              str(dinero) + '.')
 
             # COMO SE DEFINE NUMERO
             if opcion == 3:
@@ -219,9 +223,8 @@ while True:
                     print("Sus ganancias son " + str(ganancia) +
                           ", actualmente tiene " + str(dinero))
                 else:
-                    print("Sus ganancias son 0, actualmente tiene " + str(dinero))
-            # SERE
-            #
+                    print("Sus ganancias son 0, actualmente tiene " +
+                          str(dinero) + '.')
 
             # COMO SE DEFINE COLOR
 
@@ -234,7 +237,8 @@ while True:
                     print("Sus ganancias son " + str(ganancia) +
                           ", actualmente tiene " + str(dinero))
                 else:
-                    print("Sus ganancias son 0, actualmente tiene " + str(dinero))
+                    print("Sus ganancias son 0, actualmente tiene " +
+                          str(dinero) + '.')
         print('Usted se retira de casino con ' + str(dinero) + ".")
         break
     elif opcion_continuar == "1":
