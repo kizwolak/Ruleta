@@ -117,7 +117,7 @@ while True:
     while apuesta.isdigit() == False or 0 >= float(apuesta) or float(apuesta) > dinero:
 
         print(
-            "Ha ingresado un valor inválido o no tiene suficientes fondos, intente nuevamente"
+            "Ha ingresado un valor inválido o no tiene suficientes fondos, intente nuevamente."
         )
 
         apuesta = input("Cuánto desea apostar? ")
@@ -132,7 +132,8 @@ while True:
 
     # Actualizar la cantidad de dinero del usuario y mostrarla
     dinero -= apuesta
-    print("Ha apostado", apuesta, ". Le quedan", dinero, "para usar")
+    print("Ha apostado" + str(apuesta) +
+          ". Le quedan" + str(dinero) + "para usar.")
     # Preguntar al usuario si quiere seguir apostando
     if opcion == 1:
         betsArray.append([opcion, apuesta, par_impar])
@@ -160,10 +161,10 @@ while True:
             currentBet = betsArray.pop()
             opcion = currentBet[0]
             apuesta = currentBet[1]
+            numero_ganador = random.randint(0, 36)
 
             if opcion == 1:
                 par_impar = currentBet[2]
-                numero_ganador = random.randint(1, 36)
                 print("Ha salido", numero_ganador)
 
                 if numero_ganador % 2 == 0 and par_impar == 1 or numero_ganador % 2 == 1 and par_impar == 2:
@@ -177,8 +178,6 @@ while True:
             # como se define columnas
             if opcion == 2:
                 columna = currentBet[2]
-                numero_ganador = random.randint(0, 36)
-
                 print("Ha salido", numero_ganador)
 
                 if columna == 1:
@@ -213,7 +212,6 @@ while True:
             # COMO SE DEFINE NUMERO
             if opcion == 3:
                 numero_elegido = currentBet[2]
-                numero_ganador = 5
                 print("Ha salido", numero_ganador)
                 if numero_ganador == numero_elegido:
                     ganancia = apuesta * 36
@@ -229,7 +227,6 @@ while True:
 
             if opcion == 4:
                 color = currentBet[2]
-                numero_ganador = random.randint(1, 36)
                 print("El número es", numero_ganador)
                 if (numero_ganador in numeros_rojos and color == 1) or (numero_ganador in numeros_negros and color == 2):
                     ganancia = apuesta * 2
