@@ -132,7 +132,7 @@ while True:
 
     # Actualizar la cantidad de dinero del usuario y mostrarla
     dinero -= apuesta
-    print("Ha apostado" + str(apuesta) +
+    print("Ha apostado " + str(apuesta) +
           ". Le quedan" + str(dinero) + "para usar.")
     # Preguntar al usuario si quiere seguir apostando
     if opcion == 1:
