@@ -155,7 +155,7 @@ while True:
                     dinero += ganancia
 
                 print("Como usted apostó " + str(apuesta) + " al " +
-                      par_impar_desc + ", ganó " + str(ganancia))
+                      par_impar_desc + ", ganó " + str(ganancia) + ".")
 
             if opcion == 2:
                 ganancia = 0
@@ -179,7 +179,7 @@ while True:
                         dinero += ganancia
 
                 print("Como usted apostó " + str(apuesta) +
-                      "al columna " + str(columna) + ", ganó" + str(ganancia))
+                      " al columna " + str(columna) + ", ganó " + str(ganancia) + ".")
 
             if opcion == 3:
                 ganancia = 0
@@ -189,7 +189,7 @@ while True:
                     dinero += ganancia
 
                 print("Como usted apostó " + str(apuesta) +
-                      " al numero " + str(numero_elegido) + ", ganó" + str(ganancia))
+                      " al numero " + str(numero_elegido) + ", ganó " + str(ganancia) + ".")
 
             if opcion == 4:
                 ganancia = 0
@@ -203,7 +203,7 @@ while True:
                     dinero += ganancia
 
                 print("Como usted apostó " + str(apuesta) +
-                      " al color " + color_desc + ", ganó" + str(ganancia))
+                      " al color " + color_desc + ", ganó " + str(ganancia) + ".")
         if dinero <= 0:
             print('Se ha quedado sin dinero.')
             print('Usted se retira de casino con ' + dinero + ".")
