@@ -228,7 +228,7 @@ while True:
             if opcion == 4:
                 color = currentBet[2]
                 numero_ganador = random.randint(1, 36)
-                print("El número es", numero)
+                print("El número es", numero_ganador)
                 if (numero_ganador in numeros_rojos and color == "rojo") or (numero_ganador in numeros_negros and color == "negro"):
                     ganancia = apuesta * 2
                     dinero += ganancia
