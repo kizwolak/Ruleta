@@ -239,8 +239,15 @@ while True:
                 else:
                     print("Sus ganancias son 0, actualmente tiene " +
                           str(dinero) + '.')
-        print('Usted se retira de casino con ' + str(dinero) + ".")
-        break
+        nextRound = True
+        if dinero <= 0:
+            print('Se ha quedado sin dinero.')
+            print('Usted se retira de casino con ' + str(dinero) + ".")
+            break
+        else:
+            continue
+
+        continue
     elif opcion_continuar == "1":
         nextRound = True
         continue
